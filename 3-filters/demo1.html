@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="app1" ng-controller="myctrl">
+			<h1>转化为大写{{daxie | uppercase}}</h1>
+			<h1>转化为小写{{xiaoxie | lowercase}}</h1>
+			<h1>货币为{{huobi | currency}}</h1>	
+			<h1>时间格式化{{shijian | date:"yyyy-MM-dd HH:mm:ss"}}</h1>
+			<h1>保留小数{{ xiaoshu | number:3}}</h1>
+		</div>
+		<script type="text/javascript">
+			var app = angular.module("app1",[]);
+			app.controller("myctrl",function($scope){
+				$scope.daxie = "lastname1";
+				$scope.xiaoxie = "LASTNAME2";
+				$scope.huobi = "123456789";
+				$scope.shijian = "14564564561313";
+				$scope.xiaoshu = "123123.1131313";
+			})
+		</script>
+	</body>
+</html>
