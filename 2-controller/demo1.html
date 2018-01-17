@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="index_name_array" ng-controller="ina_ctrl">
+			<input ng-model="firstname" />
+			<input ng-model="lastname" />
+			<h1>{{fullname}}</h1>
+		</div>
+		<script type="text/javascript">
+			var app = angular.module('index_name_array',[]);
+			app.controller('ina_ctrl',function($scope){
+				$scope.firstname = "peter";
+				$scope.lastname = "joes";
+				$scope.fullname = $scope.firstname + $scope.lastname;
+			});
+		</script>
+	</body>
+</html>
