@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="myctrl">
+			<h1>{{myheader}}</h1>
+		</div>
+		<script type="text/javascript">
+			var app = angular.module("myapp",[]);
+			app.controller("myctrl",function($scope,$timeout){
+				$scope.myheader = "hello world";
+				$timeout(function(){
+					$scope.myheader = "how are you today?";
+				},2000);
+			});
+		</script>
+	</body>
+</html>
+<!--settimeout-->

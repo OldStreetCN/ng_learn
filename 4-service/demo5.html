@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="myapp" ng-controller="myctrl">
+			<h1>{{myheader}}</h1>
+		</div>
+		<script type="text/javascript">
+			var app = angular.module("myapp",[]);
+			
+			app.service("hexafy",function(){
+				this.myFunc = function(x){
+					return x.toString(16);
+				}
+			});
+			
+			app.controller("myctrl",function($scope,hexafy){
+				$scope.myheader = hexafy.myFunc(255);
+			})
+		</script>
+	</body>
+</html>
+<!--make a diy service-->

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="app1" ng-controller="myctrl">
+			<h1>{{myurl}}</h1>
+		</div>
+		<script type="text/javascript">
+			var app = angular.module('app1',[]);
+			app.controller('myctrl',function($scope,$location){
+				$scope.myurl = $location.absUrl();
+			})
+		</script>
+	</body>
+</html>
+<!--返回页面地址-->
