@@ -12,11 +12,12 @@
 		<script type="text/javascript">
 			var app = angular.module("myapp",[]);
 			app.controller("myctrl",function($scope,$http){
-				$http.get("http://www.runoob.com/try/angularjs/data/sites.php").success(function(response){
-					$scope.names = response.sites;
-				})
+				$http.get("1.json").success(function(response){
+					$scope.names = response.sites[0].Name;
+				});
 				
 			});
+
 		</script>
 	</body>
 </html>
