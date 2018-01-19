@@ -11,9 +11,13 @@
 		</div>
 		<script type="text/javascript">
 			var app = angular.module("myapp",[]);
+			var array = [];
 			app.controller("myctrl",function($scope,$http){
 				$http.get("1.json").success(function(response){
-					$scope.names = response.sites[0].Name;
+					for(i in response){
+						array.push(JSON.stringify(i.Name));
+					}
+					$scope.names = array;
 				});
 				
 			});
