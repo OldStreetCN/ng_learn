@@ -15,7 +15,7 @@
 			app.controller("myctrl",function($scope,$http){
 				$http.get("1.json").success(function(response){
 					for(i in response){
-						array.push(JSON.stringify(i.Name));
+						array.push(JSON.stringify(sites[i].Name));
 					}
 					$scope.names = array;
 				});

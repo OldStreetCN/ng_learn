@@ -7,13 +7,13 @@
 	</head>
 	<body>
 		<div ng-app="app1" ng-controller="myctrl">
-			<h1>{{myurl}}</h1>
+			<select ng-init="aa = names[0]" ng-model="aa" ng-options="x for x in names"></select>
 		</div>
 		<script type="text/javascript">
 			var app = angular.module('app1',[]);
-			app.controller('myctrl',function($scope,$location){
-				$scope.myurl = $location.absUrl();
-			})
+			app.controller("myctrl",function($scope){
+				$scope.names = ["google","runoob","taobao","aaaaaa"];
+			});
 		</script>
 	</body>
 </html>
